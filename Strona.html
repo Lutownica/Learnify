@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Strona.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caudex:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>STUDLIFY.com</title>
+</head>
+<body>
+    <div class="box1">
+        <div>
+            <a class="Tytul">STUDLIFY</a><br>
+            <a class="podtytul">SITE NEARLY READY</a><br>
+            <p class="timer" id="demo"></p>
+
+            <a class="podtytul2">You can check out our social media. :)</a>
+            <div class="ikony">
+                <div class="grid1">
+                    <div class="separator">
+                        <a href="https://www.google.com/"><img src="svg/fb.svg" class="btn2" alt="Facebook"></a>
+                    </div>
+                    <div class="separator">
+                        <a href="https://www.google.com/"><img src="svg/insta.svg" class="btn2" alt="Instagram"></a>                   
+                    </div>
+                    <div class="separator">
+                        <a href="https://www.google.com/"><img src="svg/twitter.svg" class="btn2" alt="Twitter"></a>
+                    </div>
+                </div>
+<!--
+                    <img src="svg/fb.svg" class="ikona2" alt="Facebook"/>
+                    <img src="svg/insta.svg" class="ikona2" alt="Instagram"/>
+                    <img src="svg/twitter.svg" class="ikona2" alt="Twitter"/>
+                    <button href="https://www.youtube.com"></button>
+                    <a href="https://www.youtube.com" class="btn"></a>
+-->      
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Jun 4, 2022 0:00:00").getTime();
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+    </script>
