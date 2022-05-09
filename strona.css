@@ -84,17 +84,17 @@ body {
 .grid1{
     margin-bottom: -2vh;
     justify-content: center;
-    grid-template-columns: 8vw 8vw 8vw;
+    grid-template-columns: 7vw 7vw 7vw 7vw;
     display: grid;
-    column-gap: 7vw;   
+    column-gap: 4vw;   
     
     align-items: center;
 }
 @media(max-width: 700px){
     .grid1{
         position: relative;
-        grid-template-columns: 10vw 10vw 10vw;
-        column-gap: 15vw; 
+        grid-template-columns: 10vw 10vw 10vw 10vw;
+        column-gap: 10vw; 
     }
 }
 .separator{
