@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz kontaktowy</title>
+</head>
+<body>
+    <h1>Formularz kontaktowy</h1>
+    <form id="contactForm">
+        <label for="name">Imię:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="phone">Telefon:</label><br>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]{9}"><br><br>
+        
+        <label for="offer">Oferta:</label><br>
+        <textarea id="offer" name="offer" rows="4" required></textarea><br><br>
+        
+        <button type="submit">Wyślij</button>
+    </form>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            
+            // Collect form data
+            var formData = new FormData(this);
+            
+            // Convert FormData to JSON
+            var jsonObject = {};
+            formData.forEach(function(value, key){
+                jsonObject[key] = value;
+            });
+            var jsonData = JSON.stringify(jsonObject);
+            
+            // Send form data via email
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'mailer.php'); // Replace 'mailer.php' with your backend script
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    alert('Dane zostały wysłane pomyślnie!');
+                    document.getElementById('contactForm').reset();
+                } else {
+                    alert('Wystąpił błąd podczas wysyłania danych.');
+                }
+            };
+            xhr.send(jsonData);
+        });
+    </script>
+</body>
+</html>
