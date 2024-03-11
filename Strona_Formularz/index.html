@@ -14,18 +14,21 @@
     </script>
 <body>
     <h1>Contact form</h1>
-    <form action="https://formspree.io/xkndzvad" method="POST">
-        <label for="name">Name:</label><br>
+    <form action="https://formspree.io/xkndzvad" method="POST" onsubmit="pobierzNazweStrony()">
+        <label for="name">Imię:</label><br>
         <input type="text" id="name" name="name" required><br><br>
         
-        <label for="phone">Phone Number:</label><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="phone">Telefon:</label><br>
         <input type="tel" id="phone" name="phone" required pattern="[0-9]{9}"><br><br>
         
-        <label for="offer">Offer:</label><br>
+        <label for="offer">Oferta:</label><br>
         <textarea id="offer" name="offer" rows="4" required></textarea><br><br>
         
         <input type="hidden" id="nazwaStrony" name="nazwaStrony">
-        <button type="submit">Send</button>
+        <button type="submit">Wyślij</button>
     </form>
 </body>
 </html>
